@@ -1,5 +1,10 @@
 import { __ } from "@wordpress/i18n";
-import { useBlockProps, MediaPlaceholder, BlockControls, BlockAlignmentToolbar } from "@wordpress/block-editor";
+import {
+	useBlockProps,
+	MediaPlaceholder,
+	BlockControls,
+	BlockAlignmentToolbar,
+} from "@wordpress/block-editor";
 import type { BlockEditProps } from "@wordpress/blocks";
 
 import "./editor.scss";
@@ -25,23 +30,24 @@ export default function Edit({
 		<div {...useBlockProps()}>
 			<div
 				style={{
-					display: "flex",
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fill, minmax(120px, 160px))",
 					gap: "10px",
-					flexWrap: "wrap",
+					justifyContent: "center",
 				}}
 			>
 				{attributes.images.map((i) => (
 					<div
 						key={i.id}
 						style={{
-							width: 200,
-							height: 200,
+							width: 150,
+							height: 150,
 							backgroundColor: "#f0f0f0",
+							overflow: "hidden",
+							borderRadius: 4,
 							display: "flex",
 							alignItems: "center",
 							justifyContent: "center",
-							overflow: "hidden",
-							borderRadius: 4,
 						}}
 					>
 						<img
