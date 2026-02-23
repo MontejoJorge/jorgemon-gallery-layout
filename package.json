@@ -1,33 +1,37 @@
 {
-	"name": "better-gallery",
-	"version": "0.1.0",
-	"description": "A gallery, but better.",
-	"author": "MontejoJorge",
-	"license": "C BY-NC-SA 4.0",
-	"main": "build/index.js",
-	"scripts": {
-		"build": "wp-scripts build --blocks-manifest",
-		"format": "wp-scripts format",
-		"lint:css": "wp-scripts lint-style",
-		"lint:js": "wp-scripts lint-js",
-		"type-check": "tsc --noEmit",
-		"packages-update": "wp-scripts packages-update",
-		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --blocks-manifest"
-	},
-	"dependencies": {
-		"@wordpress/block-editor": "^15.13.1",
-		"@wordpress/blocks": "^15.13.0",
-		"@wordpress/components": "^32.2.0",
-		"@wordpress/i18n": "^6.13.0"
-	},
-	"devDependencies": {
-		"@types/node": "^25.3.0",
-		"@types/react": "^19.2.14",
-		"@types/react-dom": "^19.2.3",
-		"@types/wordpress__block-editor": "^15.0.3",
-		"@types/wordpress__blocks": "^15.10.0",
-		"@wordpress/scripts": "^31.5.0",
-		"typescript": "^5.9.3"
-	}
+  "name": "better-gallery",
+  "version": "0.1.0",
+  "description": "A gallery, but better.",
+  "author": "MontejoJorge",
+  "license": "C BY-NC-SA 4.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "wp-scripts build --blocks-manifest",
+    "format": "wp-scripts format",
+    "lint:css": "wp-scripts lint-style",
+    "lint:js": "wp-scripts lint-js",
+    "type-check": "tsc --noEmit",
+    "packages-update": "wp-scripts packages-update",
+    "plugin-zip": "wp-scripts plugin-zip",
+    "start": "wp-scripts start --blocks-manifest",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@wordpress/block-editor": "^15.13.1",
+    "@wordpress/blocks": "^15.13.0",
+    "@wordpress/components": "^32.2.0",
+    "@wordpress/i18n": "^6.13.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/wordpress__block-editor": "^15.0.3",
+    "@types/wordpress__blocks": "^15.10.0",
+    "@wordpress/scripts": "^31.5.0",
+    "prettier": "^3.8.1",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "typescript": "^5.9.3"
+  }
 }
