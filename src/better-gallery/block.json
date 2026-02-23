@@ -6,7 +6,7 @@
 	"title": "Better Gallery",
 	"category": "media",
 	"icon": "format-gallery",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "A gallery, but better",
 	"example": {},
 	"supports": {
 		"html": false,
@@ -23,8 +23,16 @@
 			"default": []
 		},
 		"align": {
-        "type": "string",
-        "default": "wide"
-    }
+			"type": "string",
+			"default": "wide"
+		},
+		"gap": {
+			"type": "number",
+			"default": 5
+		},
+		"targetRowHeight": {
+			"type": "number",
+			"default": 200
+		}
 	}
 }

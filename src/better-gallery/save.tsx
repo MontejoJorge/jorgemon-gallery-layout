@@ -12,16 +12,14 @@ import type { BlockAttributes } from "./types";
 export default function save({
 	attributes,
 }: BlockSaveProps<BlockAttributes>): JSX.Element {
-	const gap = 5;
-
 	return (
 		<div {...useBlockProps.save()}>
 			{attributes.images?.length > 0 && (
 				<div
 					className="better-gallery-frontend"
 					data-images={JSON.stringify(attributes.images)}
-					data-gap={gap}
-					data-target-row-height={attributes.size ?? 200}
+					data-gap={attributes.gap}
+					data-target-row-height={attributes.targetRowHeight}
 				/>
 			)}
 		</div>

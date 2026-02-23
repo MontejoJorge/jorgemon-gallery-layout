@@ -97,24 +97,24 @@ function renderGallery(container: HTMLElement) {
 
 	container.innerHTML = layout
 		.map(
-			(row) => `
-			<div style="display:flex; justify-content:flex-start; gap:${gap}px; margin-bottom:${gap}px;">
-				${row
-					.map((item) => {
-						const widthStyle = item.fixedWidth
-							? `width:${item.fixedWidth}px`
-							: `width:${item.widthPercent}%`;
-						return `
-							<img
-								src="${item.image.url}"
-								alt="${item.image.alt ?? ""}"
-								style="${widthStyle}; height:${item.height}px; object-fit:cover; object-position:center; display:block;"
-							/>
-						`;
-					})
-					.join("")}
-			</div>
-		`,
+			(row, rowIndex) => `
+        <div style="display:flex; justify-content:flex-start; gap:${gap}px;${rowIndex < layout.length - 1 ? ` margin-bottom:${gap}px;` : ""}">
+            ${row
+							.map((item) => {
+								const widthStyle = item.fixedWidth
+									? `width:${item.fixedWidth}px`
+									: `width:${item.widthPercent}%`;
+								return `
+                        <img
+                            src="${item.image.url}"
+                            alt="${item.image.alt ?? ""}"
+                            style="${widthStyle}; height:${item.height}px; object-fit:cover; object-position:center; display:block;"
+                        />
+                    `;
+							})
+							.join("")}
+        </div>
+    `,
 		)
 		.join("");
 }

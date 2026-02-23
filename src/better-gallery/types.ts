@@ -28,12 +28,7 @@ export interface WPImage {
 export interface BlockAttributes {
 	images: WPImage[];
 	enabled: boolean;
-	size: number;
-}
-
-export interface BlockAttributes {
-	images: WPImage[];
-	enabled: boolean;
-	size: number;
+	gap: number;
+	targetRowHeight: number;
 	align?: "wide" | "full";
 }
