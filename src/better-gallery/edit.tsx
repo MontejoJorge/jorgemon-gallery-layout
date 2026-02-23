@@ -1,10 +1,5 @@
 import { __ } from "@wordpress/i18n";
-import {
-	useBlockProps,
-	MediaPlaceholder,
-	BlockControls,
-	MediaReplaceFlow,
-} from "@wordpress/block-editor";
+import { useBlockProps, MediaPlaceholder } from "@wordpress/block-editor";
 import type { BlockEditProps } from "@wordpress/blocks";
 
 import "./editor.scss";
@@ -27,57 +22,17 @@ export default function Edit({
 	};
 
 	const hasImages = attributes.images.length > 0;
-	const hasImageIds =
-		hasImages && attributes.images.some((image) => !!image.id);
 
 	return (
 		<div {...useBlockProps()}>
-			{hasImages && (
-				<BlockControls group="other">
-					<MediaReplaceFlow
-						allowedTypes={["image"]}
-						onSelect={onSelectImages}
-						name={__("Add")}
-						multiple
-						mediaIds={attributes.images
-							.filter((image) => image.id)
-							.map((image) => image.id)}
-						addToGallery={hasImageIds}
-						variant="toolbar"
-					/>
-				</BlockControls>
-			)}
 			{hasImages ? (
-				<div
-					style={{
-						display: "grid",
-						gridTemplateColumns: "repeat(auto-fill, 150px)",
-						gap: "10px",
-						justifyContent: "center",
-					}}
-				>
+				<div className="better-gallery-editor-grid">
 					{attributes.images.map((i) => (
-						<div
-							key={i.id}
-							style={{
-								width: 150,
-								height: 150,
-								backgroundColor: "#f0f0f0",
-								overflow: "hidden",
-								borderRadius: 4,
-								display: "flex",
-								alignItems: "center",
-								justifyContent: "center",
-							}}
-						>
+						<div key={i.id} className="better-gallery-editor-cell">
 							<img
 								src={i.sizes?.medium?.url || i.url}
 								alt={i.alt}
-								style={{
-									maxWidth: "100%",
-									maxHeight: "100%",
-									objectFit: "contain",
-								}}
+								className="better-gallery-editor-image"
 							/>
 						</div>
 					))}

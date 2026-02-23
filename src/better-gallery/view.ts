@@ -84,6 +84,7 @@ function computeJustifiedLayout(
 
 function renderGallery(container: HTMLElement) {
 	const images: WPImage[] = JSON.parse(container.dataset.images ?? "[]");
+	console.log(images)
 	const gap = Number(container.dataset.gap ?? 5);
 	const targetRowHeight = Number(container.dataset.targetRowHeight ?? 200);
 	const containerWidth = container.clientWidth;
