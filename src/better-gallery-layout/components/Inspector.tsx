@@ -90,6 +90,16 @@ export default function Inspector({
           min={0}
           max={30}
         />
+        <RangeControl
+          label={__('Radius')}
+          value={attributes.radius}
+          onChange={(value: number | undefined) => {
+            setAttributes({ radius: value ?? 0 });
+          }}
+          help={__('The border radius in pixels (rounded corners).')}
+          min={0}
+          max={40}
+        />
       </PanelBody>
     </InspectorControls>
   );

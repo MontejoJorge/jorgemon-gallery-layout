@@ -31,4 +31,5 @@ export interface BlockAttributes {
   gap: number;
   targetRowHeight: number;
   align?: 'wide' | 'full';
+  radius: number;
 }

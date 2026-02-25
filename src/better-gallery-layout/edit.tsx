@@ -24,6 +24,9 @@ export default function Edit({
                 src={i.sizes?.medium?.url || i.url}
                 alt={i.alt}
                 className="better-gallery-layout-editor-image"
+                style={{
+                  borderRadius: `${attributes.radius}px`
+                }}
               />
             </div>
           ))}

@@ -23,6 +23,7 @@ export default function save({
           className="better-gallery-layout-frontend"
           data-gap={attributes.gap}
           data-target-row-height={attributes.targetRowHeight}
+          data-border-radius={attributes.radius}
         >
           {attributes.images.map((image, index) => (
             <img

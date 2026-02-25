@@ -92,6 +92,7 @@ function renderGallery(container: HTMLElement) {
   const gap = Number(container.dataset.gap ?? 5);
   const targetRowHeight = Number(container.dataset.targetRowHeight ?? 200);
   const containerWidth = container.clientWidth;
+  const borderRadius = container.dataset.borderRadius;
 
   const layout = computeJustifiedLayout(
     images,
@@ -136,6 +137,7 @@ function renderGallery(container: HTMLElement) {
         ? `${item.fixedWidth}px`
         : `${item.widthPercent}%`;
       img.style.height = `${item.height}px`;
+      img.style.borderRadius = `${borderRadius}px`
       rowEl.appendChild(img);
     });
 

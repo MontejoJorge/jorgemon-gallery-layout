@@ -33,6 +33,10 @@
     "targetRowHeight": {
       "type": "number",
       "default": 200
+    },
+    "radius": {
+      "type": "number",
+      "default": 0
     }
   }
 }
